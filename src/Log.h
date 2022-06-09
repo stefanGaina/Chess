@@ -16,10 +16,10 @@ private:
 };
 
 /* Log macros */
-#define TRACE(...) Log::getLogger()->trace(__VA_ARGS__)
-#define INFO(...)  Log::getLogger()->info (__VA_ARGS__)
-#define WARN(...)  Log::getLogger()->warn (__VA_ARGS__)
-#define ERROR(...) Log::getLogger()->error(__VA_ARGS__)
-#define FATAL(...) Log::getLogger()->fatal(__VA_ARGS__)
+#define TRACE(...)    Log::getLogger()->trace   (__VA_ARGS__)
+#define INFO(...)     Log::getLogger()->info    (__VA_ARGS__)
+#define WARN(...)     Log::getLogger()->warn    (__VA_ARGS__)
+#define ERROR(...)    Log::getLogger()->error   (__VA_ARGS__)
+#define CRITICAL(...) Log::getLogger()->critical(__VA_ARGS__)
 
 #endif /* LOG_H_ */
