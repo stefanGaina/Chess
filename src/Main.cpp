@@ -1,8 +1,12 @@
-#include <iostream>
+#include "Log.h"
 
 int main(int argc, char* argv[])
 {
-	std::cout << "It's working!" << std::endl;
+	Log::init();
+
+	TRACE("ok");
+
+	//Log::getLogger()->trace("ok");
 
 	return 0;
 }
