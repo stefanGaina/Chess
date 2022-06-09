@@ -1,8 +1,8 @@
 #ifndef LOG_H_
 #define LOG_H_
 
-#include "spdlog/spdlog.h"
-#include "spdlog/fmt/ostr.h"
+#include <spdlog/spdlog.h>
+#include <spdlog/fmt/ostr.h>
 
 class Log
 {

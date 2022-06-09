@@ -1,12 +1,10 @@
-#include "Log.h"
+#include "pch.h"
 
 int main(int argc, char* argv[])
 {
 	Log::init();
 
 	TRACE("ok");
-
-	//Log::getLogger()->trace("ok");
 
 	return 0;
 }
