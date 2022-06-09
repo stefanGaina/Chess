@@ -2,6 +2,8 @@
 #define PCH_H_
 
 #include "Log.h"
-#include "Core.h"
+#include "Assert.h"
+
+#include <SDL.h>
 
 #endif /* PCH_H_ */
