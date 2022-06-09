@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendor\SDL2\include;$(SolutionDir)vendor\spdlog\include;$(SolutionDir)vendor\SDL2_image\include;$(SolutionDir)src;$(SolutionDir)src\Window;$(SolutionDir)src\Interfaces;$(SolutionDir)src\Game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\SDL2\include;$(SolutionDir)vendor\spdlog\include;$(SolutionDir)vendor\SDL2_image\include;$(SolutionDir)src;$(SolutionDir)src\Window;$(SolutionDir)src\Interfaces;$(SolutionDir)src\Game;$(SolutionDir)src\General;$(SolutionDir)src\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -107,7 +107,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendor\SDL2\include;$(SolutionDir)vendor\spdlog\include;$(SolutionDir)vendor\SDL2_image\include;$(SolutionDir)src;$(SolutionDir)src\Window;$(SolutionDir)src\Interfaces;$(SolutionDir)src\Game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\SDL2\include;$(SolutionDir)vendor\spdlog\include;$(SolutionDir)vendor\SDL2_image\include;$(SolutionDir)src;$(SolutionDir)src\Window;$(SolutionDir)src\Interfaces;$(SolutionDir)src\Game;$(SolutionDir)src\General;$(SolutionDir)src\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -126,7 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendor\SDL2\include;$(SolutionDir)vendor\spdlog\include;$(SolutionDir)vendor\SDL2_image\include;$(SolutionDir)src;$(SolutionDir)src\Window;$(SolutionDir)src\Interfaces;$(SolutionDir)src\Game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\SDL2\include;$(SolutionDir)vendor\spdlog\include;$(SolutionDir)vendor\SDL2_image\include;$(SolutionDir)src;$(SolutionDir)src\Window;$(SolutionDir)src\Interfaces;$(SolutionDir)src\Game;$(SolutionDir)src\General;$(SolutionDir)src\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -145,7 +145,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendor\SDL2\include;$(SolutionDir)vendor\spdlog\include;$(SolutionDir)vendor\SDL2_image\include;$(SolutionDir)src;$(SolutionDir)src\Window;$(SolutionDir)src\Interfaces;$(SolutionDir)src\Game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\SDL2\include;$(SolutionDir)vendor\spdlog\include;$(SolutionDir)vendor\SDL2_image\include;$(SolutionDir)src;$(SolutionDir)src\Window;$(SolutionDir)src\Interfaces;$(SolutionDir)src\Game;$(SolutionDir)src\General;$(SolutionDir)src\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -159,25 +159,40 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Game\Board.cpp" />
+    <ClCompile Include="src\Game\Player.cpp" />
+    <ClCompile Include="src\Game\Piece.cpp" />
+    <ClCompile Include="src\Game\Component.cpp" />
+    <ClCompile Include="src\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Game\DrawableContainer.cpp" />
     <ClCompile Include="src\Game\Game.cpp" />
-    <ClCompile Include="src\Log.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\pch.cpp">
+    <ClCompile Include="src\General\Log.cpp" />
+    <ClCompile Include="src\General\main.cpp" />
+    <ClCompile Include="src\General\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\TextureManager.cpp" />
+    <ClCompile Include="src\Renderer\TextureManager.cpp" />
     <ClCompile Include="src\Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Game\Board.h" />
+    <ClInclude Include="src\Game\Player.h" />
+    <ClInclude Include="src\Game\Piece.h" />
+    <ClInclude Include="src\Game\Component.h" />
+    <ClInclude Include="src\General\Types.h" />
+    <ClInclude Include="src\Interfaces\IDrawable.h" />
+    <ClInclude Include="src\Interfaces\IObserver.h" />
+    <ClInclude Include="src\Renderer\Renderer.h" />
+    <ClInclude Include="src\Game\DrawableContainer.h" />
     <ClInclude Include="src\Game\Game.h" />
-    <ClInclude Include="src\Assert.h" />
+    <ClInclude Include="src\General\Assert.h" />
     <ClInclude Include="src\Interfaces\IRunnable.h" />
-    <ClInclude Include="src\Log.h" />
-    <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\TextureManager.h" />
+    <ClInclude Include="src\General\Log.h" />
+    <ClInclude Include="src\General\pch.h" />
+    <ClInclude Include="src\Renderer\TextureManager.h" />
     <ClInclude Include="src\Window\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

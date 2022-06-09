@@ -4,14 +4,16 @@
 class Window
 {
 public:
-	Window(const char* title, Uint32 position_x, Uint32 position_y, Uint16 screen_width, Uint16 screen_height, bool is_fullscreen);
-	~Window(void);
+	static void init(const char* const title, Sint32 position_x, Sint32 position_y, Sint32 screen_width, Sint32 screen_height, bool is_fullscreen);
+	static void deinit(void);
 
-	SDL_Renderer* getRenderer(void);
+	static SDL_Window* getWindow(void);
+
+protected:
+	Window(void) {}
 
 private:
-	SDL_Window* window_;
-	SDL_Renderer* renderer_;
+	static SDL_Window* s_window_;
 };
 
 #endif /* WINDOW_H_ */

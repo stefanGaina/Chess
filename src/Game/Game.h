@@ -2,29 +2,25 @@
 #define GAME_H_
 
 #include "IRunnable.h"
-
-struct FrameCap
-{
-	const Uint8 perSecond = 60;
-	const Uint8 delay = 1000 / perSecond;
-
-	Uint32 start;
-	Uint32 time;
-};
+#include "Board.h"
+#include "DrawableContainer.h"
 
 class Game : public IRunnable
 {
 public:
-	Game(SDL_Renderer* renderer);
+	Game(void);
 
-	void run         (void);
-	void handleEvents(void);
-	void render      (void);
-	
+	void run(void) override;
 
 private:
-	SDL_Renderer* renderer_;
+	void handleEvents(void);
+	void render      (void);
+
+private:
 	bool is_running_;
+
+	DrawableContainer drawable_container_;
+	Board board_;
 };
 
 #endif /* GAME_H_ */
